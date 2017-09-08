@@ -59,4 +59,21 @@ object ex1 {
 	}                                         //> pascal: (column: Int, row: Int)Int
 	
 	pascal(2, 4)                              //> res1: Int = 6
+	
+	//TASK 4
+
+	def balance(chars: List[Char], y: Int = 0, count: Int = 0, count2: Int = 0): Boolean = {
+		if (y == chars.length) {
+			if (count == count2) true
+			else false
+		}
+		else if (chars(y) == '(') balance(chars, y+1, count+1, count2)
+		else if (chars(y) == ')') balance(chars, y+1, count, count2+1)
+		else balance(chars, y+1, count, count2)
+	}                                         //> balance: (chars: List[Char], y: Int, count: Int, count2: Int)Boolean
+	
+	var list: List[Char] = List('(', 'a', 'b', ')')
+                                                  //> list  : List[Char] = List((, a, b, ))
+ 
+	println(balance(list))                    //> true
 }

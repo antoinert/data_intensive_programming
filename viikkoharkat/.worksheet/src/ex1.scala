@@ -57,5 +57,21 @@ object ex1 {;import org.scalaide.worksheet.runtime.library.WorksheetSupport._; d
 		iter(z, column+1, row+1)
 	};System.out.println("""pascal: (column: Int, row: Int)Int""");$skip(16); val res$1 = 
 	
-	pascal(2, 4);System.out.println("""res1: Int = """ + $show(res$1))}
+	pascal(2, 4);System.out.println("""res1: Int = """ + $show(res$1));$skip(352); 
+	
+	//TASK 4
+
+	def balance(chars: List[Char], y: Int = 0, count: Int = 0, count2: Int = 0): Boolean = {
+		if (y == chars.length) {
+			if (count == count2) true
+			else false
+		}
+		else if (chars(y) == '(') balance(chars, y+1, count+1, count2)
+		else if (chars(y) == ')') balance(chars, y+1, count, count2+1)
+		else balance(chars, y+1, count, count2)
+	};System.out.println("""balance: (chars: List[Char], y: Int, count: Int, count2: Int)Boolean""");$skip(51); 
+	
+	var list: List[Char] = List('(', 'a', 'b', ')');System.out.println("""list  : List[Char] = """ + $show(list ));$skip(26); 
+ 
+	println(balance(list))}
 }
