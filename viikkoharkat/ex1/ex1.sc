@@ -21,4 +21,42 @@ object ex1 {
  		sqrtInit(300, initEst, initQuo, initMean)
  	}                                         //> sqrt: (root: Double)Double
 	sqrt(2)                                   //> res0: Double = 1.414213562373095
+	
+	var k = Array[Int](1)                     //> k  : Array[Int] = Array(1)
+	
+	k = Array[Int](1,2)
+	
+	var i = 0                                 //> i  : Int = 0
+	for ( i <- k){
+		println(i)                        //> 1
+                                                  //| 2
+	}
+	
+	//TASK 3
+	def pascal(column: Int, row: Int): Int = {
+		var z = Array[Int](1)
+		
+		def roundDone(z: Array[Int], k: Array[Int] = Array[Int](1), y: Int = 1): Array[Int] = {
+			if (z.length == y) {
+				k(z.length) = 1
+				k
+			}
+			else {
+			 	k(y) = z(y)+z(y-1)
+			 	roundDone(z, k, y+1)
+			}
+		}
+		
+		def iter(z: Array[Int], column: Int, row: Int, y: Int = 0): Int = {
+			if (y == row) z(column)
+			else {
+				var k = new Array[Int](y+2)
+				iter(roundDone(z, k), column, row, y+1)
+			}
+		}
+		
+		iter(z, column+1, row+1)
+	}                                         //> pascal: (column: Int, row: Int)Int
+	
+	pascal(2, 4)                              //> res1: Int = 6
 }

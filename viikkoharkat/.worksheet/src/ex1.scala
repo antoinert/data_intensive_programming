@@ -20,5 +20,42 @@ object ex1 {;import org.scalaide.worksheet.runtime.library.WorksheetSupport._; d
  		
  		sqrtInit(300, initEst, initQuo, initMean)
  	};System.out.println("""sqrt: (root: Double)Double""");$skip(9); val res$0 = 
-	sqrt(2);System.out.println("""res0: Double = """ + $show(res$0))}
+	sqrt(2);System.out.println("""res0: Double = """ + $show(res$0));$skip(25); 
+	
+	var k = Array[Int](1);System.out.println("""k  : Array[Int] = """ + $show(k ));$skip(23); 
+	
+	k = Array[Int](1,2);$skip(13); 
+	
+	var i = 0;System.out.println("""i  : Int = """ + $show(i ));$skip(29); 
+	for ( i <- k){
+		println(i)
+	};$skip(528); 
+	
+	//TASK 3
+	def pascal(column: Int, row: Int): Int = {
+		var z = Array[Int](1)
+		
+		def roundDone(z: Array[Int], k: Array[Int] = Array[Int](1), y: Int = 1): Array[Int] = {
+			if (z.length == y) {
+				k(z.length) = 1
+				k
+			}
+			else {
+			 	k(y) = z(y)+z(y-1)
+			 	roundDone(z, k, y+1)
+			}
+		}
+		
+		def iter(z: Array[Int], column: Int, row: Int, y: Int = 0): Int = {
+			if (y == row) z(column)
+			else {
+				var k = new Array[Int](y+2)
+				iter(roundDone(z, k), column, row, y+1)
+			}
+		}
+		
+		iter(z, column+1, row+1)
+	};System.out.println("""pascal: (column: Int, row: Int)Int""");$skip(16); val res$1 = 
+	
+	pascal(2, 4);System.out.println("""res1: Int = """ + $show(res$1))}
 }
