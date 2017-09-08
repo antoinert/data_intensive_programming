@@ -1,3 +1,9 @@
 object ex1 {
-  println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
-}
+	//TASK 1
+  def sum(x: Int, y: Int): Int = {
+		x+y
+  }                                               //> sum: (x: Int, y: Int)Int
+  
+  val s = sum(20, 21)                             //> s  : Int = 41
+ 
+ }
