@@ -76,4 +76,13 @@ object ex1 {
                                                   //> list  : List[Char] = List((, a, b, ))
  
 	println(balance(list))                    //> true
+	
+	//TASK 5
+	
+	val a = Array(1, 2, 3, 4, 5)              //> a  : Array[Int] = Array(1, 2, 3, 4, 5)
+
+	println(a.map(v => v*v).reduceLeft((v1, v2) => v1+v2))
+                                                  //> 55
+	
+	
 }
