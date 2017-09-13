@@ -49,11 +49,9 @@ object Main extends App {
   }                                              
 
   // Task #7: Compute an rdd containing all factors of all integers in 'nums'
-  //val allPrimes = sc.parallelize(List.tabulate(nums.count)(List()))
-  
+  val allPrimes = nums.map(i => factorization(i))
   // Task #8: Print all the values in allPrimes
-  //val printxx = allPrimes.collect()
-  //for (i <- printxx) println(i)
+  for (i <- allPrimes) i.foreach(println)
   
   
   // Bonus task:
