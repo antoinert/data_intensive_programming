@@ -2,9 +2,9 @@ object ex1 {
 	//TASK 1
   def sum(x: Int, y: Int): Int = {
 		x+y
-  }                                               //> sum: (x: Int, y: Int)Int
+  }
   
-  val s = sum(20, 21)                             //> s  : Int = 41
+  val s = sum(20, 21)
  
  
  //TASK 2
@@ -19,17 +19,16 @@ object ex1 {
  		}
  		
  		sqrtInit(300, initEst, initQuo, initMean)
- 	}                                         //> sqrt: (root: Double)Double
-	sqrt(2)                                   //> res0: Double = 1.414213562373095
+ 	}
+	sqrt(2)
 	
-	var k = Array[Int](1)                     //> k  : Array[Int] = Array(1)
+	var k = Array[Int](1)
 	
 	k = Array[Int](1,2)
 	
-	var i = 0                                 //> i  : Int = 0
+	var i = 0
 	for ( i <- k){
-		println(i)                        //> 1
-                                                  //| 2
+		println(i)
 	}
 	
 	//TASK 3
@@ -56,9 +55,9 @@ object ex1 {
 		}
 		
 		iter(z, column+1, row+1)
-	}                                         //> pascal: (column: Int, row: Int)Int
+	}
 	
-	pascal(2, 4)                              //> res1: Int = 6
+	pascal(2, 4)
 	
 	//TASK 4
 
@@ -70,19 +69,16 @@ object ex1 {
 		else if (chars(y) == '(') balance(chars, y+1, count+1, count2)
 		else if (chars(y) == ')') balance(chars, y+1, count, count2+1)
 		else balance(chars, y+1, count, count2)
-	}                                         //> balance: (chars: List[Char], y: Int, count: Int, count2: Int)Boolean
+	}
 	
 	var list: List[Char] = List('(', 'a', 'b', ')')
-                                                  //> list  : List[Char] = List((, a, b, ))
  
-	println(balance(list))                    //> true
-	
+	println(balance(list))
 	//TASK 5
 	
-	val a = Array(1, 2, 3, 4, 5)              //> a  : Array[Int] = Array(1, 2, 3, 4, 5)
+	val a = Array(1, 2, 3, 4, 5)
 
 	println(a.map(v => v*v).reduceLeft((v1, v2) => v1+v2))
-                                                  //> 55
 	
 	
 }

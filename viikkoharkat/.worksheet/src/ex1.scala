@@ -73,8 +73,7 @@ object ex1 {;import org.scalaide.worksheet.runtime.library.WorksheetSupport._; d
 	
 	var list: List[Char] = List('(', 'a', 'b', ')');System.out.println("""list  : List[Char] = """ + $show(list ));$skip(26); 
  
-	println(balance(list));$skip(44); 
-	
+	println(balance(list));$skip(42); 
 	//TASK 5
 	
 	val a = Array(1, 2, 3, 4, 5);System.out.println("""a  : Array[Int] = """ + $show(a ));$skip(57); 
