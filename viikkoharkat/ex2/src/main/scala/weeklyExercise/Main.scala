@@ -52,7 +52,7 @@ object Main extends App {
   val allPrimes = nums.map(i => factorization(i))
   // Task #8: Print all the values in allPrimes
   for (i <- allPrimes) i.foreach(println)
-  
+  allPrimes.foreach(println)  
   
   // Bonus task:
   // Here is the code snippet which was already in the first exercises. Explain how it works.
