@@ -73,7 +73,7 @@ object Main extends App {
   val pointsPerMatch: RDD[(String, Int)] = pointsPerMatch1.join(pointsPerMatch2).mapValues(l => l._1+l._2)
   
   pointsPerMatch.collect.foreach(println)
-      
+  
       
   // Bonus task #2: Compute the overall points for each team
   val table: RDD[(String, Int)] = ???
